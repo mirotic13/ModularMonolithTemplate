@@ -5,11 +5,11 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C08B8F71-8EE4-4D2A-88BC-38205BC979B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.API", "ModularMonolithTemplate.API\ModularMonolithTemplate.API.csproj", "{C60B2DA3-1F92-4D53-B952-B1E9700F0077}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.API", "src\ModularMonolithTemplate.API\ModularMonolithTemplate.API.csproj", "{C60B2DA3-1F92-4D53-B952-B1E9700F0077}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.BlazorUI", "ModularMonolithTemplate.BlazorUI\ModularMonolithTemplate.BlazorUI.csproj", "{8A7933E4-57C4-4956-8267-543B2CDAD12C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.BlazorUI", "src\ModularMonolithTemplate.BlazorUI\ModularMonolithTemplate.BlazorUI.csproj", "{8A7933E4-57C4-4956-8267-543B2CDAD12C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.BuildingBlocks", "ModularMonolithTemplate.BuildingBlocks\ModularMonolithTemplate.BuildingBlocks.csproj", "{94EED644-A167-4277-BBA7-E5042E050E70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.BuildingBlocks", "src\ModularMonolithTemplate.BuildingBlocks\ModularMonolithTemplate.BuildingBlocks.csproj", "{94EED644-A167-4277-BBA7-E5042E050E70}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModularMonolithTemplate.Modules", "ModularMonolithTemplate.Modules", "{87841A1B-77B9-4FAF-AAC8-E24A2F438921}"
 EndProject
@@ -17,29 +17,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Companies", "Companies", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{A7C95D95-5CDC-4293-8DE7-A93C5FB656AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Companies.Application", "ModularMonolithTemplate.Companies.Application\ModularMonolithTemplate.Companies.Application.csproj", "{DAB032C2-8D3B-4425-AFC4-EEBF6195FD8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Companies.Application", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Companies.Application\ModularMonolithTemplate.Companies.Application.csproj", "{DAB032C2-8D3B-4425-AFC4-EEBF6195FD8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Companies.Domain", "ModularMonolithTemplate.Companies.Domain\ModularMonolithTemplate.Companies.Domain.csproj", "{2D686F7F-6AD7-41FA-BB56-AB21A4D7A50B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Companies.Domain", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Companies.Domain\ModularMonolithTemplate.Companies.Domain.csproj", "{2D686F7F-6AD7-41FA-BB56-AB21A4D7A50B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Companies.Infraestructure", "ModularMonolithTemplate.Companies.Infraestructure\ModularMonolithTemplate.Companies.Infraestructure.csproj", "{A0C9DAAA-E3D5-42D2-857A-87188F74935F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Companies.Infraestructure", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Companies.Infraestructure\ModularMonolithTemplate.Companies.Infraestructure.csproj", "{A0C9DAAA-E3D5-42D2-857A-87188F74935F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Companies.Presentation", "ModularMonolithTemplate.Companies.Presentation\ModularMonolithTemplate.Companies.Presentation.csproj", "{2D48FDA1-B509-47F1-AA39-754E278A278C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Companies.Presentation", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Companies.Presentation\ModularMonolithTemplate.Companies.Presentation.csproj", "{2D48FDA1-B509-47F1-AA39-754E278A278C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Users.Application", "ModularMonolithTemplate.Users.Application\ModularMonolithTemplate.Users.Application.csproj", "{D2F453B7-B74D-473C-A234-D7255D3C8669}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Users.Application", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Users.Application\ModularMonolithTemplate.Users.Application.csproj", "{D2F453B7-B74D-473C-A234-D7255D3C8669}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Users.Domain", "ModularMonolithTemplate.Users.Domain\ModularMonolithTemplate.Users.Domain.csproj", "{C6830ED0-7BC3-4192-8022-B9349A0CA418}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Users.Domain", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Users.Domain\ModularMonolithTemplate.Users.Domain.csproj", "{C6830ED0-7BC3-4192-8022-B9349A0CA418}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Users.Infraestructure", "ModularMonolithTemplate.Users.Infraestructure\ModularMonolithTemplate.Users.Infraestructure.csproj", "{E9717BF8-8295-4F95-97FA-CC4CAEEC0912}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Users.Infraestructure", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Users.Infraestructure\ModularMonolithTemplate.Users.Infraestructure.csproj", "{E9717BF8-8295-4F95-97FA-CC4CAEEC0912}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Users.Presentation", "ModularMonolithTemplate.Users.Presentation\ModularMonolithTemplate.Users.Presentation.csproj", "{E9C2FE55-ECB6-4918-9EA0-8ED31E5DCFF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Users.Presentation", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Users.Presentation\ModularMonolithTemplate.Users.Presentation.csproj", "{E9C2FE55-ECB6-4918-9EA0-8ED31E5DCFF5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{25F31F30-0C38-4F52-AEFB-39C645802252}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Auth.Application", "ModularMonolithTemplate.Auth.Application\ModularMonolithTemplate.Auth.Application.csproj", "{F48E99FD-FD15-4FB8-BEC1-8A55A0E2E7A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Auth.Application", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Auth.Application\ModularMonolithTemplate.Auth.Application.csproj", "{F48E99FD-FD15-4FB8-BEC1-8A55A0E2E7A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Auth.Infraestructure", "ModularMonolithTemplate.Auth.Infraestructure\ModularMonolithTemplate.Auth.Infraestructure.csproj", "{BA60D4EB-7EEC-4AB1-865D-CA8AAF5A4FE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Auth.Infraestructure", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Auth.Infraestructure\ModularMonolithTemplate.Auth.Infraestructure.csproj", "{BA60D4EB-7EEC-4AB1-865D-CA8AAF5A4FE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Auth.Presentation", "ModularMonolithTemplate.Auth.Presentation\ModularMonolithTemplate.Auth.Presentation.csproj", "{A0A5C0A2-E289-4836-9ED3-2152D64FA720}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Auth.Presentation", "src\ModularMonolithTemplate.Modules\ModularMonolithTemplate.Auth.Presentation\ModularMonolithTemplate.Auth.Presentation.csproj", "{A0A5C0A2-E289-4836-9ED3-2152D64FA720}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

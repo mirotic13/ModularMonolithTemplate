@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ModularMonolithTemplate.Auth.Application\ModularMonolithTemplate.Auth.Application.csproj" />
-    <ProjectReference Include="..\ModularMonolithTemplate.BuildingBlocks\ModularMonolithTemplate.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\..\ModularMonolithTemplate.BuildingBlocks\ModularMonolithTemplate.BuildingBlocks.csproj" />
   </ItemGroup>
 
 </Project>
