@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ModularMonolithTemplate.BuildingBlocks.DependencyInjection;
 using ModularMonolithTemplate.BuildingBlocks.Logging;
+using ModularMonolithTemplate.Users.Application.Configuration;
 using ModularMonolithTemplate.Users.Infraestructure.DependencyInjection.Extensions;
 
 namespace ModularMonolithTemplate.Users.Infraestructure.DependencyInjection;
@@ -11,7 +13,7 @@ public static class UsersModule
     {
         services
             .ConfigureDatabase(configuration)
-            .ConfigureHandlers()
+            .ConfigureHandlers<AssemblyReference>()
             .ConfigureLogger();
 
         return services;

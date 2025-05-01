@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ModularMonolithTemplate.BuildingBlocks.DependencyInjection;
 using ModularMonolithTemplate.BuildingBlocks.Logging;
+using ModularMonolithTemplate.Companies.Application.Configuration;
 using ModularMonolithTemplate.Companies.Infraestructure.DependencyInjection.Extensions;
 
 namespace ModularMonolithTemplate.Companies.Infraestructure.DependencyInjection;
@@ -11,7 +13,7 @@ public static class CompaniesModule
     {
         services
             .ConfigureDatabase(configuration)
-            .ConfigureHandlers()
+            .ConfigureHandlers<AssemblyReference>()
             .ConfigureLogger();
 
         return services;

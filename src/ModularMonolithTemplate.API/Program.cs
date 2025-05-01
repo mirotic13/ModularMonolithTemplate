@@ -1,16 +1,11 @@
-using ModularMonolithTemplate.Auth.Infraestructure.DependencyInjection;
+using ModularMonolithTemplate.API.Configuration;
 using ModularMonolithTemplate.BuildingBlocks.Logging;
-using ModularMonolithTemplate.Companies.Infraestructure.DependencyInjection;
-using ModularMonolithTemplate.Users.Infraestructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.ConfigureSerilog();
 
-builder.Services
-    .AddAuthModule(builder.Configuration)
-    .AddCompaniesModule(builder.Configuration)
-    .AddUsersModule(builder.Configuration);
+builder.ConfigureModules();
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
