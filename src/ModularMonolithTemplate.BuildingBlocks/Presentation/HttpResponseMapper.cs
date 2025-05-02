@@ -18,10 +18,13 @@ public static class HttpResponseMapper
         {
             Log.Warning("Failed response: {Message} | Errors: {@Errors}", response.Message, response.Errors);
 
-            if (response.Errors?.Contains("VALIDATION_ERROR") == true)
+            if (response.ValidationErrors != null && response.ValidationErrors.Any())
                 return new BadRequestObjectResult(response);
 
-            if (response.Errors?.Contains("DOMAIN_ERROR") == true)
+            if (response.Errors?.Any(e => e == "VALIDATION_ERROR") == true)
+                return new BadRequestObjectResult(response);
+
+            if (response.Errors?.Any(e => e == "DOMAIN_ERROR") == true)
                 return new UnprocessableEntityObjectResult(response);
 
             return new BadRequestObjectResult(response);
@@ -47,6 +50,16 @@ public static class HttpResponseMapper
         if (!response.Success)
         {
             Log.Warning("PagedResponse failed: {Message}. Errors: {@Errors}", response.Message, response.Errors);
+
+            if (response.ValidationErrors != null && response.ValidationErrors.Any())
+                return new BadRequestObjectResult(response);
+
+            if (response.Errors?.Contains("VALIDATION_ERROR") == true)
+                return new BadRequestObjectResult(response);
+
+            if (response.Errors?.Contains("DOMAIN_ERROR") == true)
+                return new UnprocessableEntityObjectResult(response);
+
             return new BadRequestObjectResult(response);
         }
 
