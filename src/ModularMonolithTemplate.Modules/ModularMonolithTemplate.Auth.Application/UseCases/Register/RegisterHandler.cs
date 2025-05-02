@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ModularMonolithTemplate.Auth.Application.Contracts;
+using ModularMonolithTemplate.BuildingBlocks.Application.Errors;
 using ModularMonolithTemplate.BuildingBlocks.Application.Responses;
 
 namespace ModularMonolithTemplate.Auth.Application.UseCases.Register;
@@ -13,6 +14,6 @@ public class RegisterHandler(IAuthService authService) : IRequestHandler<Registe
         var result = await _authService.RegisterAsync(request.Email, request.FullName, request.Password);
         return result 
             ? BaseResponse<bool>.Ok(result, "Registration successful")
-            : BaseResponse<bool>.Fail("Registration failed");
+            : BaseResponse<bool>.Fail(new ValidationError("Register", "Registration failed"));
     }
 }

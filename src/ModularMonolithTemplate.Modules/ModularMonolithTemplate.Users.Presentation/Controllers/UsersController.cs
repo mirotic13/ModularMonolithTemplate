@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using ModularMonolithTemplate.BuildingBlocks.Presentation;
 using ModularMonolithTemplate.Users.Application.UseCases.GetDemoUser;
+using ModularMonolithTemplate.Users.Application.UseCases.GetDemoUserDomainError;
+using ModularMonolithTemplate.Users.Application.UseCases.GetDemoUserValidationError;
 
 namespace ModularMonolithTemplate.Users.Presentation.Controllers;
 
@@ -20,6 +22,20 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> GetDemoUser()
     {
         var result = await _mediator.Send(new GetDemoUserQuery());
+        return result.ToActionResult();
+    }
+
+    [HttpGet("demo/isActive")]
+    public async Task<IActionResult> GetDemoActiveUser()
+    {
+        var result = await _mediator.Send(new GetDemoUserDomainErrorQuery());
+        return result.ToActionResult();
+    }
+
+    [HttpGet("demo/isValid")]
+    public async Task<IActionResult> GetDemoValidUser()
+    {
+        var result = await _mediator.Send(new GetDemoUserValidationErrorQuery());
         return result.ToActionResult();
     }
 }

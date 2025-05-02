@@ -14,6 +14,7 @@ public static class UsersModule
         services
             .ConfigureDatabase(configuration)
             .ConfigureHandlers<AssemblyReference>()
+            .ConfigureExceptionHandler()
             .ConfigureLogger();
 
         return services;

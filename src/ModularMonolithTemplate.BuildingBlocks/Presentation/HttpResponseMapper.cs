@@ -16,21 +16,22 @@ public static class HttpResponseMapper
 
         if (!response.Success)
         {
-            Log.Warning("BaseResponse failed: {Message}. Errors: {@Errors}", response.Message, response.Errors);
+            Log.Warning("Failed response: {Message} | Errors: {@Errors}", response.Message, response.Errors);
+
+            if (response.Errors?.Contains("VALIDATION_ERROR") == true)
+                return new BadRequestObjectResult(response);
+
+            if (response.Errors?.Contains("DOMAIN_ERROR") == true)
+                return new UnprocessableEntityObjectResult(response);
+
             return new BadRequestObjectResult(response);
         }
 
         if (response.Data is false)
-        {
-            Log.Information("Request resulted in 'false' boolean: {Message}", response.Message);
             return new UnauthorizedObjectResult(response);
-        }
 
         if (response.Data is null)
-        {
-            Log.Information("Response data was null: {Message}", response.Message);
             return new NotFoundObjectResult(response);
-        }
 
         return new OkObjectResult(response);
     }

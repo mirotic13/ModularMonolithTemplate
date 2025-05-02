@@ -16,6 +16,7 @@ public static class AuthModule
             .ConfigureIdentity()
             .ConfigureServices()
             .ConfigureHandlers<AssemblyReference>()
+            .ConfigureExceptionHandler()
             .ConfigureCookie()
             .ConfigureLogger();
 
