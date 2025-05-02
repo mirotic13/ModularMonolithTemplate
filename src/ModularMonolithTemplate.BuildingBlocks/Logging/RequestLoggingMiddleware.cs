@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Serilog.Context;
 using System.Diagnostics;
 
 namespace ModularMonolithTemplate.BuildingBlocks.Logging;
@@ -12,18 +13,23 @@ public class RequestLoggingMiddleware(RequestDelegate next, ILogger<RequestLoggi
     public async Task Invoke(HttpContext context)
     {
         var sw = Stopwatch.StartNew();
+        var correlationId = context.TraceIdentifier;
 
-        _logger.LogInformation("HTTP {Method} {Path} requested",
-            context.Request.Method, context.Request.Path);
+        using (LogContext.PushProperty("CorrelationId", correlationId))
+        {
+            context.Response.Headers["X-Correlation-Id"] = correlationId;
 
-        await _next(context);
+            _logger.LogInformation("HTTP {Method} {Path} requested", context.Request.Method, context.Request.Path);
 
-        sw.Stop();
+            await _next(context);
 
-        _logger.LogInformation("HTTP {Method} {Path} responded {StatusCode} in {ElapsedMs} ms",
-            context.Request.Method,
-            context.Request.Path,
-            context.Response.StatusCode,
-            sw.ElapsedMilliseconds);
+            sw.Stop();
+
+            _logger.LogInformation("HTTP {Method} {Path} responded {StatusCode} in {ElapsedMs} ms",
+                context.Request.Method,
+                context.Request.Path,
+                context.Response.StatusCode,
+                sw.ElapsedMilliseconds);
+        }
     }
 }

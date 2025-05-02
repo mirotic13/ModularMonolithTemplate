@@ -25,7 +25,7 @@ public static class LoggerConfigurationExtension
         if (builder.Environment.IsDevelopment())
         {
             loggerConfig.WriteTo.Console(outputTemplate:
-                "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
+                "[{Timestamp:HH:mm:ss} {Level:u3}] (CorrId: {CorrelationId}) {Message:lj}{NewLine}{Exception}");
         }
         else
         {
@@ -65,7 +65,6 @@ public static class LoggerConfigurationExtension
     public static IServiceCollection ConfigureLogger(this IServiceCollection services)
     {
         services.AddScoped(typeof(ILogService<>), typeof(LogService<>));
-
         return services;
     }
 }
