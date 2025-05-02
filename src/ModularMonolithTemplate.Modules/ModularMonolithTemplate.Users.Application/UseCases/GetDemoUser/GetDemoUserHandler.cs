@@ -1,13 +1,19 @@
 ﻿using MediatR;
 using ModularMonolithTemplate.BuildingBlocks.Application.Responses;
+using ModularMonolithTemplate.BuildingBlocks.Contracts.Users.Responses;
 
 namespace ModularMonolithTemplate.Users.Application.UseCases.GetDemoUser;
 
-public class GetDemoUserHandler : IRequestHandler<GetDemoUserQuery, BaseResponse<GetDemoUserResponse>>
+public class GetDemoUserHandler : IRequestHandler<GetDemoUserQuery, BaseResponse<DemoUserResponse>>
 {
-    public Task<BaseResponse<GetDemoUserResponse>> Handle(GetDemoUserQuery request, CancellationToken cancellationToken)
+    public Task<BaseResponse<DemoUserResponse>> Handle(GetDemoUserQuery query, CancellationToken cancellationToken)
     {
-        var user = new GetDemoUserResponse("1", "Demo User", "demo@example.com");
-        return Task.FromResult(BaseResponse<GetDemoUserResponse>.Ok(user));
+        var user = new DemoUserResponse 
+        { 
+            Id = "1",
+            FullName = "Demo User", 
+            Email = "demo@example.com"
+        };
+        return Task.FromResult(BaseResponse<DemoUserResponse>.Ok(user));
     }
 }

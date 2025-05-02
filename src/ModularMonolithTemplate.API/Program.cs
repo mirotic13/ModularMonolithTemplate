@@ -7,7 +7,6 @@ builder.ConfigureSerilog();
 
 builder.ConfigureModules();
 
-builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -18,8 +17,11 @@ var app = builder.Build();
 app.UseCustomSerilogExceptionHandler();
 app.UseCustomRequestLogging();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseAuthentication();
 app.UseAuthorization();

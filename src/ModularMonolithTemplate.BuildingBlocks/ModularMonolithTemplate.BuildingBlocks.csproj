@@ -16,4 +16,9 @@
 	<PackageReference Include="MediatR" Version="12.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\Companies\Requests\" />
+    <Folder Include="Contracts\Users\Requests\" />
+  </ItemGroup>
+
 </Project>

@@ -1,9 +1,77 @@
-﻿@inherits LayoutComponentBase
+﻿@inherits MainLayoutBase
 
-@Body
-
-<div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
-</div>
+<Layout Sider>
+    <LayoutSider>
+        <LayoutSiderContent>
+            ﻿<Bar Mode="BarMode.VerticalInline"
+                  CollapseMode="BarCollapseMode.Small"
+                  Breakpoint="Breakpoint.Desktop"
+                  NavigationBreakpoint="Breakpoint.Tablet"
+                  ThemeContrast="ThemeContrast.Dark">
+                <BarToggler />
+                <BarBrand>
+                    <BarItem>
+                        <BarLink To="home">
+                            <BarIcon IconName="IconName.Dashboard" />
+                            BlazorTemplate
+                        </BarLink>
+                    </BarItem>
+                </BarBrand>
+                <BarMenu>
+                    <BarStart>
+                        <BarItem>
+                            <BarLink To="auth-status">
+                                <BarIcon IconName="IconName.UserCheck" /> Status
+                            </BarLink>
+                        </BarItem>
+                        <BarItem>
+                            <BarLink To="users">
+                                <BarIcon IconName="IconName.Users" /> Users
+                            </BarLink>
+                        </BarItem>
+                    </BarStart>
+                    <BarEnd>
+                        <BarItem>
+                            <BarLink To="login">
+                                <BarIcon IconName="IconName.Unlock" /> Admin
+                            </BarLink>
+                        </BarItem>
+                    </BarEnd>
+                </BarMenu>
+            </Bar>
+        </LayoutSiderContent>
+    </LayoutSider>
+    <Layout>
+        <LayoutHeader Fixed>
+            ﻿<Bar Breakpoint="Breakpoint.Desktop"
+                  Background="Background.Transparent"
+                  ThemeContrast="ThemeContrast.Light">
+                <BarMenu>
+                    <BarStart>
+                        <BarItem>
+                            <BarLink To="#docs">Documentation</BarLink>
+                        </BarItem>
+                        <BarItem>
+                            <BarDropdown>
+                                <BarDropdownToggle>Dropdown</BarDropdownToggle>
+                                <BarDropdownMenu>
+                                    <BarDropdownItem>Action</BarDropdownItem>
+                                    <BarDropdownDivider />
+                                    <BarDropdownItem>Another action</BarDropdownItem>
+                                </BarDropdownMenu>
+                            </BarDropdown>
+                        </BarItem>
+                    </BarStart>
+                    <BarEnd>
+                        <BarItem>
+                            <Button Color="Color.Primary">Notifications</Button>
+                        </BarItem>
+                    </BarEnd>
+                </BarMenu>
+            </Bar>
+        </LayoutHeader>
+        <LayoutContent Margin="Margin.Is5.OnX">
+            @Body
+        </LayoutContent>
+    </Layout>
+</Layout>

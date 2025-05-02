@@ -5,6 +5,7 @@ using ModularMonolithTemplate.Auth.Application.UseCases.Logout;
 using ModularMonolithTemplate.Auth.Application.UseCases.Login;
 using ModularMonolithTemplate.Auth.Application.UseCases.Register;
 using ModularMonolithTemplate.BuildingBlocks.Presentation;
+using ModularMonolithTemplate.BuildingBlocks.Contracts.Auth.Requests;
 
 namespace ModularMonolithTemplate.Auth.Presentation.Controllers;
 
@@ -15,16 +16,16 @@ public class AuthController(IMediator mediator) : ControllerBase
     private readonly IMediator _mediator = mediator;
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register(RegisterCommand command)
+    public async Task<IActionResult> Register(RegisterRequest request)
     {
-        var result = await _mediator.Send(command);
+        var result = await _mediator.Send(new RegisterCommand(request));
         return result.ToActionResult();
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login(LoginCommand command)
+    public async Task<IActionResult> Login(LoginRequest request)
     {
-        var result = await _mediator.Send(command);
+        var result = await _mediator.Send(new LoginCommand(request));
         return result.ToActionResult();
     }
 

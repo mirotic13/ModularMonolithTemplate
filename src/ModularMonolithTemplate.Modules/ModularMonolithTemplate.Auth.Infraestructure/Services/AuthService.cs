@@ -3,8 +3,8 @@ using ModularMonolithTemplate.Auth.Application.Contracts;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication;
-using MediatR;
 using ModularMonolithTemplate.Auth.Infraestructure.Identity;
+using ModularMonolithTemplate.BuildingBlocks.Contracts.Auth.Responses;
 
 namespace ModularMonolithTemplate.Auth.Infraestructure.Services;
 
@@ -13,21 +13,33 @@ public class AuthService(IHttpContextAccessor httpContextAccessor, UserManager<A
     private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
     private readonly UserManager<AppUser> _userManager = userManager;
 
-    public async Task<bool> LoginAsync(string email, string password)
+    public async Task<LoginResponse> LoginAsync(string email, string password)
     {
         var claims = new List<Claim>
         {
             new(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString()),
+            new(ClaimTypes.Name, email),
             new(ClaimTypes.Email, email),
-            new(ClaimTypes.Name, "Demo User")
+            new(ClaimTypes.Role, "Demo User")
         };
 
-        var identity = new ClaimsIdentity(claims, "FakeScheme");
+        var identity = new ClaimsIdentity(claims, IdentityConstants.ApplicationScheme);
         var principal = new ClaimsPrincipal(identity);
 
-        await _httpContextAccessor.HttpContext!.SignInAsync(IdentityConstants.ApplicationScheme, principal);
+        await _httpContextAccessor.HttpContext!.SignInAsync(
+        IdentityConstants.ApplicationScheme,
+        principal,
+        new AuthenticationProperties
+        {
+            IsPersistent = true,
+            ExpiresUtc = DateTimeOffset.UtcNow.AddHours(1)
+        });
 
-        return true;
+        return new LoginResponse
+        {
+            Success = true,
+            Email = email
+        };
     }
 
     public async Task LogoutAsync()

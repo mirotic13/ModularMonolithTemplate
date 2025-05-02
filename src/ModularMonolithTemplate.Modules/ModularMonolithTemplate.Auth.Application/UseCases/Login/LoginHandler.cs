@@ -1,28 +1,30 @@
 ﻿using MediatR;
 using ModularMonolithTemplate.Auth.Application.Contracts;
 using ModularMonolithTemplate.BuildingBlocks.Application.Responses;
+using ModularMonolithTemplate.BuildingBlocks.Contracts.Auth.Responses;
 using ModularMonolithTemplate.BuildingBlocks.Logging;
 
 namespace ModularMonolithTemplate.Auth.Application.UseCases.Login;
 
-public class LoginHandler(IAuthService authService, ILogService<LoginHandler> logger) : IRequestHandler<LoginCommand, BaseResponse<bool>>
+public class LoginHandler(IAuthService authService, ILogService<LoginHandler> logger) : IRequestHandler<LoginCommand, BaseResponse<LoginResponse>>
 {
     private readonly IAuthService _authService = authService;
     private readonly ILogService<LoginHandler> _logger = logger;
 
-    public async Task<BaseResponse<bool>> Handle(LoginCommand request, CancellationToken cancellationToken)
+    public async Task<BaseResponse<LoginResponse>> Handle(LoginCommand command, CancellationToken cancellationToken)
     {
+        var request = command.Request;
         _logger.Info($"Trying to log in as {request.Email}");
 
-        var success = await _authService.LoginAsync(request.Email, request.Password);
+        var result = await _authService.LoginAsync(request.Email, request.Password);
 
-        if (!success)
+        if (!result.Success)
         {
             _logger.Warn($"Login failed for {request.Email}");
-            return BaseResponse<bool>.Ok(false, "Invalid credentials");
+            return BaseResponse<LoginResponse>.Fail("Invalid credentials");
         }
 
         _logger.Info($"Login successful for {request.Email}");
-        return BaseResponse<bool>.Ok(true, "Login successful");
+        return BaseResponse<LoginResponse>.Ok(result, "Login successful");
     }
 }

@@ -9,8 +9,9 @@ public class RegisterHandler(IAuthService authService) : IRequestHandler<Registe
 {
     private readonly IAuthService _authService = authService;
 
-    public async Task<BaseResponse<bool>> Handle(RegisterCommand request, CancellationToken cancellationToken)
+    public async Task<BaseResponse<bool>> Handle(RegisterCommand command, CancellationToken cancellationToken)
     {
+        var request = command.Request;
         var result = await _authService.RegisterAsync(request.Email, request.FullName, request.Password);
         return result 
             ? BaseResponse<bool>.Ok(result, "Registration successful")
