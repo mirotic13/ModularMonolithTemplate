@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ModularMonolithTemplate.Users.Application.GetDemoUser;
+using ModularMonolithTemplate.BuildingBlocks.Presentation;
+using ModularMonolithTemplate.Users.Application.UseCases.GetDemoUser;
 
 namespace ModularMonolithTemplate.Users.Presentation.Controllers;
 
@@ -19,6 +20,6 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> GetDemoUser()
     {
         var result = await _mediator.Send(new GetDemoUserQuery());
-        return Ok(result);
+        return result.ToActionResult();
     }
 }

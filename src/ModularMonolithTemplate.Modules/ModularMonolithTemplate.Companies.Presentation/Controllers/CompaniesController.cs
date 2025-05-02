@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ModularMonolithTemplate.Companies.Application.GetDemoCompany;
+using ModularMonolithTemplate.BuildingBlocks.Presentation;
+using ModularMonolithTemplate.Companies.Application.UseCases.GetDemoCompany;
 
 namespace ModularMonolithTemplate.Companies.Presentation.Controllers;
 
@@ -14,6 +15,6 @@ public class CompaniesController(IMediator mediator) : ControllerBase
     public async Task<IActionResult> GetDemoCompany()
     {
         var result = await _mediator.Send(new GetDemoCompanyQuery());
-        return Ok(result);
+        return result.ToActionResult();
     }
 }
