@@ -1,7 +1,5 @@
 ﻿using FluentValidation;
-using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using ModularMonolithTemplate.BuildingBlocks.Application.Behaviors;
 
 namespace ModularMonolithTemplate.BuildingBlocks.DependencyInjection
 {

@@ -2,7 +2,6 @@
 using MediatR;
 using Serilog;
 using ModularMonolithTemplate.BuildingBlocks.Application.Responses;
-using ModularMonolithTemplate.BuildingBlocks.Application.Errors;
 
 namespace ModularMonolithTemplate.BuildingBlocks.Application.Behaviors;
 

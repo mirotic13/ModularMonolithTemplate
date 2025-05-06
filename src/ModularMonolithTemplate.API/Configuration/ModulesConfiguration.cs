@@ -1,6 +1,6 @@
 ﻿using ModularMonolithTemplate.Auth.Infraestructure.DependencyInjection;
-using ModularMonolithTemplate.Companies.Infraestructure.DependencyInjection;
-using ModularMonolithTemplate.Users.Infraestructure.DependencyInjection;
+using ModularMonolithTemplate.Inventory.Infraestructure.DependencyInjection;
+using ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection;
 
 namespace ModularMonolithTemplate.API.Configuration;
 
@@ -10,7 +10,7 @@ public static class ModulesConfiguration
     {
         builder.Services
             .AddAuthModule(builder.Configuration)
-            .AddCompaniesModule(builder.Configuration)
-            .AddUsersModule(builder.Configuration);
+            .AddInventoryModule(builder.Configuration)
+            .AddSalesModule(builder.Configuration);
     }
 }
