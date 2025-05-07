@@ -24,7 +24,7 @@ public class LoginDemoCommandHandler(IConfiguration configuration) : IRequestHan
             new("demo", "true")
         };
 
-        var jwtSection = _configuration.GetSection("JwtSettings");
+        var jwtSection = _configuration.GetSection("JwtOptions");
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSection["Secret"]!));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
