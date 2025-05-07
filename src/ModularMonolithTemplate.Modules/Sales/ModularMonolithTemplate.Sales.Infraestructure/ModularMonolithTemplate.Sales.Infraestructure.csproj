@@ -14,8 +14,4 @@
     <ProjectReference Include="..\ModularMonolithTemplate.Sales.Application\ModularMonolithTemplate.Sales.Application.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Sales.Domain\ModularMonolithTemplate.Sales.Domain.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Persistence\Configurations\" />
-  </ItemGroup>
 </Project>

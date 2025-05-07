@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Inventory\ModularMonolithTemplate.Inventory.Domain\ModularMonolithTemplate.Inventory.Domain.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModularMonolithTemplate.Sales.Domain\ModularMonolithTemplate.Sales.Domain.csproj" />
   </ItemGroup>
 
 </Project>

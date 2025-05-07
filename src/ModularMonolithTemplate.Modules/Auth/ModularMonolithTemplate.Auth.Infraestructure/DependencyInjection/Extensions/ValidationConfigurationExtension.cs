@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using ModularMonolithTemplate.Auth.Application.Auth.Login.Validations;
+using ModularMonolithTemplate.Auth.Application.Auth.Login.Validators;
 using ModularMonolithTemplate.Auth.Application.Auth.Logout.Validators;
 using ModularMonolithTemplate.Auth.Application.Auth.Refresh.Validators;
 using ModularMonolithTemplate.Auth.Application.Auth.Register.Validators;

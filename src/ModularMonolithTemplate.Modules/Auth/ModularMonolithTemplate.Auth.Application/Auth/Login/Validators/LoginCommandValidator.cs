@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using ModularMonolithTemplate.Auth.Application.Auth.Login.Commands;
 
-namespace ModularMonolithTemplate.Auth.Application.Auth.Login.Validations;
+namespace ModularMonolithTemplate.Auth.Application.Auth.Login.Validators;
 
 public class LoginCommandValidator : AbstractValidator<LoginCommand>
 {
