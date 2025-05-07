@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ModularMonolithTemplate.BuildingBlocks\ModularMonolithTemplate.BuildingBlocks.csproj" />
     <ProjectReference Include="..\..\Inventory\ModularMonolithTemplate.Inventory.Domain\ModularMonolithTemplate.Inventory.Domain.csproj" />
   </ItemGroup>
 

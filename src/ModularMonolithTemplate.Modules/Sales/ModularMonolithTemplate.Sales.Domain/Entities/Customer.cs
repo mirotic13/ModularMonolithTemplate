@@ -1,4 +1,4 @@
-﻿using ModularMonolithTemplate.SharedKernel.Domain;
+﻿using ModularMonolithTemplate.SharedKernel.Domain.Entities;
 
 namespace ModularMonolithTemplate.Sales.Domain.Entities;
 

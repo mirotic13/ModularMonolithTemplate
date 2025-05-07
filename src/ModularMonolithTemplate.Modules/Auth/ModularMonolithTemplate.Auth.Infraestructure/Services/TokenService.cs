@@ -9,9 +9,9 @@ using ModularMonolithTemplate.Auth.Infraestructure.Configuration;
 
 namespace ModularMonolithTemplate.Auth.Infraestructure.Services;
 
-public class TokenService(IOptions<JwtSettings> jwtOptions) : ITokenService
+public class TokenService(IOptions<JwtOptions> jwtOptions) : ITokenService
 {
-    private readonly JwtSettings _jwtSettings = jwtOptions.Value;
+    private readonly JwtOptions _jwtSettings = jwtOptions.Value;
 
     public string GenerateToken(ApplicationUser user, IList<string> roles, bool isTwoFactorAuthenticated)
     {

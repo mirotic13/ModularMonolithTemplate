@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ModularMonolithTemplate.BuildingBlocks\ModularMonolithTemplate.BuildingBlocks.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Inventory.Application\ModularMonolithTemplate.Inventory.Application.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Inventory.Domain\ModularMonolithTemplate.Inventory.Domain.csproj" />
   </ItemGroup>

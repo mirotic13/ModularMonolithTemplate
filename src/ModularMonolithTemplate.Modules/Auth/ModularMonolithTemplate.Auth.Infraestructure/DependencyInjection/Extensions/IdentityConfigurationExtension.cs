@@ -23,10 +23,10 @@ public static class IdentityConfigurationExtension
         .AddEntityFrameworkStores<AuthDbContext>()
         .AddDefaultTokenProviders();
 
-        var jwtSection = configuration.GetSection("JwtSettings");
-        services.Configure<JwtSettings>(jwtSection);
+        var jwtSection = configuration.GetSection("JwtOptions");
+        services.Configure<JwtOptions>(jwtSection);
 
-        var jwtSettings = jwtSection.Get<JwtSettings>();
+        var jwtSettings = jwtSection.Get<JwtOptions>();
         var key = Encoding.UTF8.GetBytes(jwtSettings!.Secret);
 
         services.AddAuthentication(options =>

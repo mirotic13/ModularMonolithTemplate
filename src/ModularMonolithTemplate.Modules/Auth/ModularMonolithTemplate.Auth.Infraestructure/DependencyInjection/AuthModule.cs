@@ -2,9 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using ModularMonolithTemplate.Auth.Application;
 using ModularMonolithTemplate.Auth.Infraestructure.DependencyInjection.Extensions;
-using ModularMonolithTemplate.BuildingBlocks.DependencyInjection;
-using ModularMonolithTemplate.BuildingBlocks.Logging;
-using ModularMonolithTemplate.SharedKernel.DependencyInjection;
+using ModularMonolithTemplate.SharedKernel.Infraestructure.DependencyInjection;
 
 namespace ModularMonolithTemplate.Auth.Infraestructure.DependencyInjection;
 
@@ -19,10 +17,10 @@ public static class AuthModule
             .ConfigureRepositories()
             .ConfigureServices()
             .ConfigureSecurity()
-            .ConfigureHandlers<IAssemblyMarker>()
-            .ConfigureExceptionHandler()
             .ConfigureValidation()
-            .ConfigureLogger();
+            .ConfigureHostedServices();
+
+        services.AddSharedKernel<IAssemblyMarker>();
 
         services.AddHttpContextAccessor();
 

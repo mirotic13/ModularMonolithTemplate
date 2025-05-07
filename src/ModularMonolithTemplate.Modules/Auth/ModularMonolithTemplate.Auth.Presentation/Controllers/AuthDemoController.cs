@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ModularMonolithTemplate.Auth.Application.AuthDemo.IsAuthenticatedDemo.Queries;
 using ModularMonolithTemplate.Auth.Application.AuthDemo.LoginDemo.Commands;
 using ModularMonolithTemplate.Auth.Application.AuthDemo.LoginDemo.Contracts;
+using ModularMonolithTemplate.SharedKernel.Application.Responses;
 
 namespace ModularMonolithTemplate.Auth.Presentation.Controllers;
 
@@ -18,7 +19,7 @@ public class AuthDemoController(IMediator mediator) : ControllerBase
     {
         var command = new LoginDemoCommand { Request = request };
         var result = await _mediator.Send(command);
-        return Ok(result);
+        return result.ToActionResult();
     }
 
     [Authorize]
@@ -26,6 +27,6 @@ public class AuthDemoController(IMediator mediator) : ControllerBase
     public async Task<IActionResult> Check()
     {
         var result = await _mediator.Send(new IsAuthenticatedDemoQuery());
-        return Ok(result);
+        return result.ToActionResult();
     }
 }

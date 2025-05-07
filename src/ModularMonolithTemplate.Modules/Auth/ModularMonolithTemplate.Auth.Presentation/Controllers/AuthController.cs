@@ -5,9 +5,10 @@ using ModularMonolithTemplate.Auth.Application.Auth.Login.Commands;
 using ModularMonolithTemplate.Auth.Application.Auth.Register.Commands;
 using ModularMonolithTemplate.Auth.Application.Auth.Register.Contracts;
 using ModularMonolithTemplate.Auth.Application.Auth.Login.Contracts;
-using ModularMonolithTemplate.Modules.Auth.Application.Auth.Logout.Commands;
 using ModularMonolithTemplate.Auth.Application.Auth.Refresh.Commands;
 using ModularMonolithTemplate.Auth.Application.Auth.Refresh.Contracts;
+using ModularMonolithTemplate.SharedKernel.Application.Responses;
+using ModularMonolithTemplate.Auth.Application.Auth.Logout.Commands;
 
 namespace ModularMonolithTemplate.Auth.Presentation.Controllers;
 
@@ -22,7 +23,7 @@ public class AuthController(IMediator mediator) : ControllerBase
     {
         var command = new RegisterCommand { Request = request };
         var result = await _mediator.Send(command);
-        return Ok(result);
+        return result.ToActionResult();
     }
 
     [HttpPost("login")]
@@ -30,7 +31,7 @@ public class AuthController(IMediator mediator) : ControllerBase
     {
         var command = new LoginCommand { Request = request };
         var result = await _mediator.Send(command);
-        return Ok(result);
+        return result.ToActionResult();
     }
 
     [Authorize(Policy = "ValidTokenOnly")]
@@ -38,7 +39,7 @@ public class AuthController(IMediator mediator) : ControllerBase
     public async Task<IActionResult> Logout()
     {
         var result = await _mediator.Send(new LogoutCommand());
-        return Ok(result);
+        return result.ToActionResult();
     }
 
     [HttpPost("refresh")]
@@ -46,7 +47,7 @@ public class AuthController(IMediator mediator) : ControllerBase
     {
         var command = new RefreshTokenCommand { Request = request };
         var result = await _mediator.Send(command);
-        return Ok(result);
+        return result.ToActionResult();
     }
 
 }
