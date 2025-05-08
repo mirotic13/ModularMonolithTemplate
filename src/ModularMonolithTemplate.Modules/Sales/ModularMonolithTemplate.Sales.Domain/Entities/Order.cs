@@ -45,6 +45,14 @@ public class Order : BaseEntity
         Status = OrderStatus.Paid;
     }
 
+    public void MarkAsShipped()
+    {
+        if (Status != OrderStatus.Paid)
+            throw new InvalidOperationException("Only paid orders can be shipped.");
+
+        Status = OrderStatus.Shipped;
+    }
+
     public void Cancel()
     {
         if (Status == OrderStatus.Shipped)

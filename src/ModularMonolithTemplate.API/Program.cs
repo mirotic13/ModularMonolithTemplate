@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ModularMonolithTemplate.API.Configuration;
+using ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection;
 using ModularMonolithTemplate.SharedKernel.Filters;
 using ModularMonolithTemplate.SharedKernel.Logging;
 using ModularMonolithTemplate.SharedKernel.Middleware;
@@ -36,6 +37,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    await SalesModule.InitializeAsync(app.Services);
 }
 
 app.UseAuthentication();

@@ -20,7 +20,9 @@
     <ProjectReference Include="..\ModularMonolithTemplate.Modules\Auth\ModularMonolithTemplate.Auth.Infraestructure\ModularMonolithTemplate.Auth.Infraestructure.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Modules\Auth\ModularMonolithTemplate.Auth.Presentation\ModularMonolithTemplate.Auth.Presentation.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Modules\Inventory\ModularMonolithTemplate.Inventory.Infraestructure\ModularMonolithTemplate.Inventory.Infraestructure.csproj" />
+    <ProjectReference Include="..\ModularMonolithTemplate.Modules\Inventory\ModularMonolithTemplate.Inventory.Presentation\ModularMonolithTemplate.Inventory.Presentation.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Modules\Sales\ModularMonolithTemplate.Sales.Infraestructure\ModularMonolithTemplate.Sales.Infraestructure.csproj" />
+    <ProjectReference Include="..\ModularMonolithTemplate.Modules\Sales\ModularMonolithTemplate.Sales.Presentation\ModularMonolithTemplate.Sales.Presentation.csproj" />
   </ItemGroup>
 
 </Project>
