@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Shared\ModularMonolithTemplate.Contracts\ModularMonolithTemplate.Contracts.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Sales.Domain\ModularMonolithTemplate.Sales.Domain.csproj" />
   </ItemGroup>
 

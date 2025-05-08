@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using ModularMonolithTemplate.API.Configuration;
+using ModularMonolithTemplate.Inventory.Infraestructure.DependencyInjection;
+using ModularMonolithTemplate.Inventory.Presentation.Configuration;
+using ModularMonolithTemplate.Inventory.Presentation.Hubs;
 using ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection;
 using ModularMonolithTemplate.SharedKernel.Filters;
 using ModularMonolithTemplate.SharedKernel.Logging;
@@ -25,6 +28,8 @@ builder.Services.AddControllers(options =>
     options.Filters.Add<ActionTimingFilter>();
 });
 
+builder.Services.AddInventoryModulePresentation();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSwagger();
 
@@ -38,7 +43,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     await SalesModule.InitializeAsync(app.Services);
+    await InventoryModule.InitializeAsync(app.Services);
 }
+
+app.MapHub<StockHub>("/hub/inventory");
 
 app.UseAuthentication();
 app.UseAuthorization();

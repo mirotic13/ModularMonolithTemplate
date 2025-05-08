@@ -1,17 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ModularMonolithTemplate.Inventory.Application.Abstractions;
 using ModularMonolithTemplate.Inventory.Domain.Entities;
-using ModularMonolithTemplate.Inventory.Infraestructure.Persistence.Configurations;
 
 namespace ModularMonolithTemplate.Inventory.Infraestructure.Persistence;
 
-public class InventoryDbContext(DbContextOptions<InventoryDbContext> options) : DbContext(options)
+public class InventoryDbContext(DbContextOptions<InventoryDbContext> options) : DbContext(options), IInventoryDbContext
 {
-    public DbSet<Product> Products => Set<Product>();
-    public DbSet<StockEntry> StockEntries => Set<StockEntry>();
+    public DbSet<StockItem> StockItems => Set<StockItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new ProductConfiguration());
-        modelBuilder.ApplyConfiguration(new StockEntryConfiguration());
+        modelBuilder.HasDefaultSchema("inventory");
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(InventoryDbContext).Assembly);
     }
 }
