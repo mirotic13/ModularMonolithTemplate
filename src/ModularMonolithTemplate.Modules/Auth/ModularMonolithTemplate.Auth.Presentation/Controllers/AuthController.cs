@@ -60,5 +60,4 @@ public class AuthController(IMediator mediator) : ControllerBase
         var result = await _mediator.Send(command);
         return result.ToActionResult();
     }
-
 }

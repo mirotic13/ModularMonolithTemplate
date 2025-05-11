@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently --kill-others-on-fail --success first --names \"API,FRONT\" -c \"blue,green\" \"npm run start:api\" \"npm run wait-and-start:client\"",
+    "start:api": "dotnet build ../../../ModularMonolithTemplate.sln && dotnet run --no-build --launch-profile https --project ../../ModularMonolithTemplate.API/ModularMonolithTemplate.API.csproj",
+    "wait-and-start:client": "wait-on https://localhost:7118/health && npm run start:client",
+    "start:client": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -28,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",
     "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.1.2",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.31.0",
@@ -41,6 +45,7 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "wait-on": "^8.0.3"
   }
 }
