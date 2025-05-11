@@ -1,6 +1,5 @@
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 import { useAuth } from '@context/AuthContext';
-import { Link as RouterLink } from 'react-router-dom';
 import LoginButton from '@auth/login/components/LoginButton';
 import LogoutButton from '@auth/logout/components/LogoutButton';
 import RegisterButton from '@auth/register/components/RegisterButton';
