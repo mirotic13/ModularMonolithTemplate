@@ -1,9 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import type { LoginRequest, LoginResponse } from '@features/auth/types/loginTypes';
-import { login, logout } from '@features/auth/services/authService';
-import { getUserFromToken } from '@features/auth/utils/jwtUtils';
-import { localStorageService } from '@utils/localStorageService';
+import type { LoginRequest } from '@auth/login/contracts/loginRequest';
+import type { LoginResponse } from '@auth/login/contracts/loginResponse';
+import { logout } from '@auth/logout/services/logoutService';
+import { login } from '@auth/login/services/loginService';
+import { getUserFromToken } from '@auth/utils/jwtUtils';
+import { localStorageService } from '@shared/utils/localStorageService';
 import { AUTH_ROUTES } from '@routes/routePaths';
 
 interface AuthContextType {

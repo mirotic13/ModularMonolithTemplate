@@ -2,16 +2,21 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@api/*": ["src/api/*"],
-      "@components/*": ["src/components/*"],
+      "@app/*": ["src/app/*"],
+
+      "@assets/*": ["src/assets/*"],
       "@context/*": ["src/context/*"],
-      "@features/*": ["src/features/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@routes/*": ["src/routes/*"],
       "@services/*": ["src/services/*"],
-      "@utils/*": ["src/utils/*"]
+      "@shared/*": ["src/shared/*"],
+      "@store/*": ["src/store/*"],
+      "@theme/*": ["src/theme/*"],
+
+      "@routes/*": ["src/app/routes/*"],
+
+      "@auth/*": ["src/features/auth/*"],
+      "@dashboard/*": ["src/features/dashboard/*"],
+      "@inventory/*": ["src/features/inventory/*"],
+      "@sales/*": ["src/features/sales/*"]
     }
   },
   "files": [],

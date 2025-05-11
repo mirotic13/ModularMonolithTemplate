@@ -1,4 +1,4 @@
-import type { LoginResponse } from '@features/auth/types/loginTypes';
+import type { LoginResponse } from '@auth/login/contracts/loginResponse';
 
 export const getUserFromToken = (): Pick<LoginResponse, 'userName' | 'roles' | 'twoFactorEnabled'> | null => {
   const token = localStorage.getItem('token');
