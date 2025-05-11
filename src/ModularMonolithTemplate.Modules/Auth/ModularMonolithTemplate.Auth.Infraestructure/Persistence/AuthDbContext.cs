@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using ModularMonolithTemplate.Auth.Domain.Entities;
 using ModularMonolithTemplate.Auth.Infraestructure.Persistence.Configurations;
-using ModularMonolithTemplate.SharedKernel.Domain.Entities;
 
 namespace ModularMonolithTemplate.Auth.Infraestructure.Persistence;
 

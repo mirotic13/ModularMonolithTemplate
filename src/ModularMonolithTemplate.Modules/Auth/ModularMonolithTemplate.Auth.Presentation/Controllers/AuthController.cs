@@ -9,11 +9,13 @@ using ModularMonolithTemplate.Auth.Application.Auth.Refresh.Commands;
 using ModularMonolithTemplate.Auth.Application.Auth.Refresh.Contracts;
 using ModularMonolithTemplate.SharedKernel.Application.Responses;
 using ModularMonolithTemplate.Auth.Application.Auth.Logout.Commands;
+using ModularMonolithTemplate.Auth.Application.Auth.Verify2FA.Contracts;
+using ModularMonolithTemplate.Auth.Application.Auth.Verify2FA.Commands;
 
 namespace ModularMonolithTemplate.Auth.Presentation.Controllers;
 
 [ApiController]
-[Route("auth")]
+[Route("api/[controller]")]
 public class AuthController(IMediator mediator) : ControllerBase
 {
     private readonly IMediator _mediator = mediator;
@@ -30,6 +32,15 @@ public class AuthController(IMediator mediator) : ControllerBase
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
         var command = new LoginCommand { Request = request };
+        var result = await _mediator.Send(command);
+        return result.ToActionResult();
+    }
+
+    [Authorize(Policy = "PartialTokenOnly")]
+    [HttpPost("verify2fa")]
+    public async Task<IActionResult> Verify2FA([FromBody] Verify2FARequest request)
+    {
+        var command = new Verify2FACommand { Request = request };
         var result = await _mediator.Send(command);
         return result.ToActionResult();
     }

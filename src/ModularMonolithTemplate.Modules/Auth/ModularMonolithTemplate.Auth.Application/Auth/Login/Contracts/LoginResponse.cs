@@ -3,8 +3,8 @@
 public class LoginResponse
 {
     public string Token { get; set; } = default!;
-    public bool TwoFactorPassed { get; set; }
+    public bool TwoFactorEnabled { get; set; }
     public string UserName { get; set; } = default!;
     public List<string> Roles { get; set; } = [];
-    public string RefreshToken { get; set; } = default!;
+    public string? RefreshToken { get; set; }
 }

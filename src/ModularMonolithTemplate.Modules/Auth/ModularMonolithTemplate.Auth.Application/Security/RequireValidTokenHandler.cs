@@ -29,6 +29,13 @@ public class RequireValidTokenHandler(
             return;
         }
 
+        var twoFactorPassed = user?.FindFirst("2fa")?.Value;
+        if (!string.Equals(twoFactorPassed, "true", StringComparison.OrdinalIgnoreCase))
+        {
+            context.Fail();
+            return;
+        }
+
         context.Succeed(requirement);
     }
 }

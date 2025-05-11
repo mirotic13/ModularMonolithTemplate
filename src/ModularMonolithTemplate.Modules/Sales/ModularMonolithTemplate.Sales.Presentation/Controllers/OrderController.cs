@@ -20,7 +20,7 @@ namespace ModularMonolithTemplate.Sales.Presentation.Controllers;
 
 [Authorize(Policy = "ValidTokenOnly")]
 [ApiController]
-[Route("api/sales/orders")]
+[Route("api/sales/[controller]")]
 public class OrderController(IMediator mediator) : ControllerBase
 {
     private readonly IMediator _mediator = mediator;

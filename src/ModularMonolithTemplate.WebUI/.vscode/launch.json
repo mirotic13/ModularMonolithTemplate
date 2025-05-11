@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Debug React App in Edge",
+      "url": "http://localhost:5173", // Cambia el puerto si usas otro (ej. 3000 para CRA)
+      "webRoot": "${workspaceFolder}/src",
+      "breakOnLoad": true
+    }
+  ]
+}

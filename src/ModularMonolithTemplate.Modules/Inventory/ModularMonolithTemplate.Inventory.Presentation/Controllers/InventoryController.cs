@@ -9,7 +9,7 @@ namespace ModularMonolithTemplate.Inventory.Presentation.Controllers;
 
 [Authorize(Policy = "ValidTokenOnly")]
 [ApiController]
-[Route("api/inventory")]
+[Route("api/[controller]")]
 public class InventoryController(IMediator mediator) : ControllerBase
 {
     private readonly IMediator _mediator = mediator;

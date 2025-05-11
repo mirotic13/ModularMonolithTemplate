@@ -9,7 +9,7 @@ using ModularMonolithTemplate.SharedKernel.Application.Responses;
 namespace ModularMonolithTemplate.Auth.Presentation.Controllers;
 
 [ApiController]
-[Route("auth/demo")]
+[Route("api/[controller]")]
 public class AuthDemoController(IMediator mediator) : ControllerBase
 {
     private readonly IMediator _mediator = mediator;
