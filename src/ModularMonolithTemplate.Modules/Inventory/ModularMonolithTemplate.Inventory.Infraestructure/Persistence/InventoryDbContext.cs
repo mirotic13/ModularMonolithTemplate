@@ -2,7 +2,7 @@
 using ModularMonolithTemplate.Inventory.Application.Abstractions;
 using ModularMonolithTemplate.Inventory.Domain.Entities;
 
-namespace ModularMonolithTemplate.Inventory.Infraestructure.Persistence;
+namespace ModularMonolithTemplate.Inventory.Infrastructure.Persistence;
 
 public class InventoryDbContext(DbContextOptions<InventoryDbContext> options) : DbContext(options), IInventoryDbContext
 {

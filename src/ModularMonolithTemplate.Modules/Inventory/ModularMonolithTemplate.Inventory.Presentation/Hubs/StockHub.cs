@@ -4,5 +4,5 @@ namespace ModularMonolithTemplate.Inventory.Presentation.Hubs;
 
 public class StockHub : Hub
 {
-    // Puedes extender esto luego con métodos como SendStockUpdate, SubscribeToProduct, etc.
+    public const string HubUrl = "/hub/inventory";
 }

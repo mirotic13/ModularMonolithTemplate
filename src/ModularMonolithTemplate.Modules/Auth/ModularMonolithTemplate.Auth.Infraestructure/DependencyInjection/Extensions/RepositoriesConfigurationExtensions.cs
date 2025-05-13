@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using ModularMonolithTemplate.Auth.Application.Repositories;
 using ModularMonolithTemplate.Auth.Domain.Repositories;
 using ModularMonolithTemplate.Auth.Infraestructure.Repositories;
 

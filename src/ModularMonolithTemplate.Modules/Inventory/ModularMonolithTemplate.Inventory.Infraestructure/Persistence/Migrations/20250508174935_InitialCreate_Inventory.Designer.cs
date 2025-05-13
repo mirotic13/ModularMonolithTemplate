@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ModularMonolithTemplate.Inventory.Infraestructure.Persistence;
+using ModularMonolithTemplate.Inventory.Infrastructure.Persistence;
 
 #nullable disable
 

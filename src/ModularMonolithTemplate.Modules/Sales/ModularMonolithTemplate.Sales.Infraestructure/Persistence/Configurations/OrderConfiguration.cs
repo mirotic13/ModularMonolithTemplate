@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ModularMonolithTemplate.Sales.Domain.Entities;
 
-namespace ModularMonolithTemplate.Sales.Infraestructure.Persistence.Configurations;
+namespace ModularMonolithTemplate.Sales.Infrastructure.Persistence.Configurations;
 
 public class OrderConfiguration : IEntityTypeConfiguration<Order>
 {

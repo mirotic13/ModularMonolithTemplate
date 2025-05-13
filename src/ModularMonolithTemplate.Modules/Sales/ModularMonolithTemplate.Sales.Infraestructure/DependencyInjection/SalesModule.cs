@@ -1,11 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ModularMonolithTemplate.Sales.Application;
-using ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection.Extensions;
-using ModularMonolithTemplate.Sales.Infraestructure.Persistence;
 using ModularMonolithTemplate.SharedKernel.Infraestructure.DependencyInjection;
+using ModularMonolithTemplate.Outbox.Infrastructure;
+using ModularMonolithTemplate.Sales.Infrastructure.DependencyInjection.Extensions;
+using ModularMonolithTemplate.Sales.Infrastructure.Persistence;
 
-namespace ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection;
+namespace ModularMonolithTemplate.Sales.Infrastructure.DependencyInjection;
 
 public static class SalesModule
 {
@@ -17,6 +18,7 @@ public static class SalesModule
 
         services.AddSharedKernel<IAssemblyMarker>();
         services.AddHttpContextAccessor();
+        services.AddOutbox<SalesDbContext>();
 
         return services;
     }

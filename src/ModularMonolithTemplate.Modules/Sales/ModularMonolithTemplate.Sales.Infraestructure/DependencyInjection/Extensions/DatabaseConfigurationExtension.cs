@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using ModularMonolithTemplate.Sales.Infraestructure.Persistence;
 using ModularMonolithTemplate.Sales.Application.Abstractions;
+using ModularMonolithTemplate.Sales.Infrastructure.Persistence;
 
-namespace ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection.Extensions;
+namespace ModularMonolithTemplate.Sales.Infrastructure.DependencyInjection.Extensions;
 
 public static class DatabaseConfigurationExtension
 {

@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using ModularMonolithTemplate.API.Configuration;
-using ModularMonolithTemplate.Inventory.Infraestructure.DependencyInjection;
+using ModularMonolithTemplate.Inventory.Infrastructure.DependencyInjection;
 using ModularMonolithTemplate.Inventory.Presentation.Configuration;
 using ModularMonolithTemplate.Inventory.Presentation.Hubs;
-using ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection;
+using ModularMonolithTemplate.Outbox.Presentation.Hubs;
+using ModularMonolithTemplate.Sales.Infrastructure.DependencyInjection;
 using ModularMonolithTemplate.SharedKernel.Filters;
 using ModularMonolithTemplate.SharedKernel.Logging;
 using ModularMonolithTemplate.SharedKernel.Middleware;
@@ -46,7 +47,8 @@ if (app.Environment.IsDevelopment())
     await InventoryModule.InitializeAsync(app.Services);
 }
 
-app.MapHub<StockHub>("/hub/inventory");
+app.MapHub<StockHub>(StockHub.HubUrl);
+app.MapHub<OutboxNotificationHub>(OutboxNotificationHub.HubUrl);
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -1,12 +1,13 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularMonolithTemplate.Contracts.SalesInventory;
+using ModularMonolithTemplate.Outbox.Application;
 using ModularMonolithTemplate.Sales.Application.Abstractions;
 using ModularMonolithTemplate.SharedKernel.Application.Responses;
 
 namespace ModularMonolithTemplate.Sales.Application.Orders.ShipOrder.Commands;
 
-public class ShipOrderCommandHandler(ISalesDbContext db, IMediator mediator) : IRequestHandler<ShipOrderCommand, Result<Unit>>
+public class ShipOrderCommandHandler(ISalesDbContext db, IEventPublisher publisher) : IRequestHandler<ShipOrderCommand, Result<Unit>>
 {
     public async Task<Result<Unit>> Handle(ShipOrderCommand command, CancellationToken cancellationToken)
     {
@@ -25,13 +26,12 @@ public class ShipOrderCommandHandler(ISalesDbContext db, IMediator mediator) : I
 
         order.MarkAsShipped();
 
-        await db.SaveChangesAsync(cancellationToken);
-
         foreach (var item in order.Items)
         {
-            await mediator.Publish(new OrderShippedIntegrationEvent(item.ProductId, item.Quantity), cancellationToken);
+            await publisher.EnqueueAsync(new OrderShippedIntegrationEvent(item.ProductId, item.Quantity), cancellationToken);
         }
 
+        await db.SaveChangesAsync(cancellationToken);
         return Result<Unit>.Success(Unit.Value);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ModularMonolithTemplate.Auth.Application.Repositories;
 using ModularMonolithTemplate.Auth.Domain.Entities;
+using ModularMonolithTemplate.Auth.Domain.Repositories;
 using ModularMonolithTemplate.Auth.Infraestructure.Persistence;
 
 namespace ModularMonolithTemplate.Auth.Infraestructure.Repositories;

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ModularMonolithTemplate.Inventory.Domain.Entities;
 
-namespace ModularMonolithTemplate.Inventory.Infraestructure.Persistence;
+namespace ModularMonolithTemplate.Inventory.Infrastructure.Persistence;
 
 public static class InventoryDbInitializer
 {

@@ -10,7 +10,7 @@ using ModularMonolithTemplate.Sales.Application.Orders.MarkAsPaid.Validators;
 using ModularMonolithTemplate.Sales.Application.Orders.RemoveItemFromOrder.Validators;
 using ModularMonolithTemplate.Sales.Application.Orders.ShipOrder.Validators;
 
-namespace ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection.Extensions;
+namespace ModularMonolithTemplate.Sales.Infrastructure.DependencyInjection.Extensions;
 
 public static class ValidationConfigurationExtensions
 {

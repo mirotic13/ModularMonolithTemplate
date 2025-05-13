@@ -1,14 +1,13 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using ModularMonolithTemplate.Auth.Application.Auth.Logout.Commands;
 using ModularMonolithTemplate.Auth.Application.Auth.Logout.Contracts;
-using ModularMonolithTemplate.Auth.Application.Repositories;
 using ModularMonolithTemplate.Auth.Domain.Entities;
+using ModularMonolithTemplate.Auth.Domain.Repositories;
 using ModularMonolithTemplate.SharedKernel.Application.Responses;
 using System.Security.Claims;
 
-namespace ModularMonolithTemplate.Modules.Auth.Application.Auth.Logout.Commands;
+namespace ModularMonolithTemplate.Auth.Application.Auth.Logout.Commands;
 
 public class LogoutCommandHandler : IRequestHandler<LogoutCommand, Result<LogoutResponse>>
 {
