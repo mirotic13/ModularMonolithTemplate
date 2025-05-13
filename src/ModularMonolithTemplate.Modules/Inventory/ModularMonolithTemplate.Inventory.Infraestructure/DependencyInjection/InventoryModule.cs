@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ModularMonolithTemplate.Inventory.Application;
-using ModularMonolithTemplate.Inventory.Infraestructure.DependencyInjection.Extensions;
-using ModularMonolithTemplate.Inventory.Infraestructure.Persistence;
+using ModularMonolithTemplate.Inventory.Infrastructure.DependencyInjection.Extensions;
+using ModularMonolithTemplate.Inventory.Infrastructure.Persistence;
 using ModularMonolithTemplate.SharedKernel.Infraestructure.DependencyInjection;
 
-namespace ModularMonolithTemplate.Inventory.Infraestructure.DependencyInjection;
+namespace ModularMonolithTemplate.Inventory.Infrastructure.DependencyInjection;
 
 public static class InventoryModule
 {

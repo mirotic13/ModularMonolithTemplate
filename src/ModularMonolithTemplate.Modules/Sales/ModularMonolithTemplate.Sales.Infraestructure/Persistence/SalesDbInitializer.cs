@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ModularMonolithTemplate.Sales.Domain.Entities;
 
-namespace ModularMonolithTemplate.Sales.Infraestructure.Persistence;
+namespace ModularMonolithTemplate.Sales.Infrastructure.Persistence;
 
 public static class SalesDbInitializer
 {

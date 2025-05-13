@@ -1,5 +1,5 @@
-﻿namespace 
-    ModularMonolithTemplate.Auth.Application.Repositories;
+﻿namespace
+    ModularMonolithTemplate.Auth.Domain.Repositories;
 
 public interface IRevokedTokenRepository
 {

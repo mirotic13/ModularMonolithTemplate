@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using ModularMonolithTemplate.Auth.Application.Repositories;
+using ModularMonolithTemplate.Auth.Domain.Repositories;
 
 namespace ModularMonolithTemplate.Auth.Application.Security;
 

@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Sal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Sales.Domain", "src\ModularMonolithTemplate.Modules\Sales\ModularMonolithTemplate.Sales.Domain\ModularMonolithTemplate.Sales.Domain.csproj", "{62AE57C8-B8AC-4797-BD14-86B38A00FBE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Sales.Infraestructure", "src\ModularMonolithTemplate.Modules\Sales\ModularMonolithTemplate.Sales.Infraestructure\ModularMonolithTemplate.Sales.Infraestructure.csproj", "{72922404-7B33-4A1C-A554-21E2C6EEE088}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Sales.Infrastructure", "src\ModularMonolithTemplate.Modules\Sales\ModularMonolithTemplate.Sales.Infraestructure\ModularMonolithTemplate.Sales.Infrastructure.csproj", "{72922404-7B33-4A1C-A554-21E2C6EEE088}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Inventory.Application", "src\ModularMonolithTemplate.Modules\Inventory\ModularMonolithTemplate.Inventory.Application\ModularMonolithTemplate.Inventory.Application.csproj", "{803F45C4-CADD-489C-B3AF-6B7A72D33701}"
 EndProject
@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Inv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Inventory.Domain", "src\ModularMonolithTemplate.Modules\Inventory\ModularMonolithTemplate.Inventory.Domain\ModularMonolithTemplate.Inventory.Domain.csproj", "{AEED46D2-830A-42F7-A846-7E7B5D44C88B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Inventory.Infraestructure", "src\ModularMonolithTemplate.Modules\Inventory\ModularMonolithTemplate.Inventory.Infraestructure\ModularMonolithTemplate.Inventory.Infraestructure.csproj", "{F3E05D6E-E6D4-4078-836E-EFEB384328E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Inventory.Infrastructure", "src\ModularMonolithTemplate.Modules\Inventory\ModularMonolithTemplate.Inventory.Infraestructure\ModularMonolithTemplate.Inventory.Infrastructure.csproj", "{F3E05D6E-E6D4-4078-836E-EFEB384328E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.SharedKernel", "src\ModularMonolithTemplate.Modules\Shared\ModularMonolithTemplate.SharedKernel\ModularMonolithTemplate.SharedKernel.csproj", "{DCDAB9B2-04BA-4225-B5D6-4181BFC03040}"
 EndProject
@@ -49,6 +49,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Contracts", "src\ModularMonolithTemplate.Modules\Shared\ModularMonolithTemplate.Contracts\ModularMonolithTemplate.Contracts.csproj", "{C5EDE463-7C00-4263-ACA4-6D5C89EB8267}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Outbox", "Outbox", "{CFEE700A-AC17-4B2C-AD62-70644BF4ED7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Outbox.Domain", "src\ModularMonolithTemplate.Modules\Outbox\ModularMonolithTemplate.Outbox.Domain\ModularMonolithTemplate.Outbox.Domain.csproj", "{1EA6AB73-8B9F-4928-9122-001AC2D5DEA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Outbox.Application", "src\ModularMonolithTemplate.Modules\Outbox\ModularMonolithTemplate.Outbox.Application\ModularMonolithTemplate.Outbox.Application.csproj", "{C5AB34B9-5F9C-4F79-AC1E-AB0B0F08C9A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Outbox.Infrastructure", "src\ModularMonolithTemplate.Modules\Outbox\ModularMonolithTemplate.Outbox.Infrastructure\ModularMonolithTemplate.Outbox.Infrastructure.csproj", "{D3F9B730-4E40-463B-A03A-8C83E2079B40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolithTemplate.Outbox.Presentation", "src\ModularMonolithTemplate.Modules\Outbox\ModularMonolithTemplate.Outbox.Presentation\ModularMonolithTemplate.Outbox.Presentation.csproj", "{ADA282F2-19E1-4AA9-B676-64CE70ECB74F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -116,6 +126,22 @@ Global
 		{C5EDE463-7C00-4263-ACA4-6D5C89EB8267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5EDE463-7C00-4263-ACA4-6D5C89EB8267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5EDE463-7C00-4263-ACA4-6D5C89EB8267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA6AB73-8B9F-4928-9122-001AC2D5DEA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA6AB73-8B9F-4928-9122-001AC2D5DEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA6AB73-8B9F-4928-9122-001AC2D5DEA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA6AB73-8B9F-4928-9122-001AC2D5DEA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5AB34B9-5F9C-4F79-AC1E-AB0B0F08C9A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AB34B9-5F9C-4F79-AC1E-AB0B0F08C9A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AB34B9-5F9C-4F79-AC1E-AB0B0F08C9A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AB34B9-5F9C-4F79-AC1E-AB0B0F08C9A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F9B730-4E40-463B-A03A-8C83E2079B40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F9B730-4E40-463B-A03A-8C83E2079B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F9B730-4E40-463B-A03A-8C83E2079B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F9B730-4E40-463B-A03A-8C83E2079B40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA282F2-19E1-4AA9-B676-64CE70ECB74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA282F2-19E1-4AA9-B676-64CE70ECB74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA282F2-19E1-4AA9-B676-64CE70ECB74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA282F2-19E1-4AA9-B676-64CE70ECB74F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +167,11 @@ Global
 		{EB932F1E-3ABD-4C1D-A8D8-71FA6D2FE2AE} = {87841A1B-77B9-4FAF-AAC8-E24A2F438921}
 		{4FFDFB7D-A67D-4B7F-B302-CB38DD5E6984} = {25F31F30-0C38-4F52-AEFB-39C645802252}
 		{C5EDE463-7C00-4263-ACA4-6D5C89EB8267} = {EB932F1E-3ABD-4C1D-A8D8-71FA6D2FE2AE}
+		{CFEE700A-AC17-4B2C-AD62-70644BF4ED7D} = {87841A1B-77B9-4FAF-AAC8-E24A2F438921}
+		{1EA6AB73-8B9F-4928-9122-001AC2D5DEA6} = {CFEE700A-AC17-4B2C-AD62-70644BF4ED7D}
+		{C5AB34B9-5F9C-4F79-AC1E-AB0B0F08C9A8} = {CFEE700A-AC17-4B2C-AD62-70644BF4ED7D}
+		{D3F9B730-4E40-463B-A03A-8C83E2079B40} = {CFEE700A-AC17-4B2C-AD62-70644BF4ED7D}
+		{ADA282F2-19E1-4AA9-B676-64CE70ECB74F} = {CFEE700A-AC17-4B2C-AD62-70644BF4ED7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69B9428F-8B95-461E-9E96-3C2DF70FCC14}

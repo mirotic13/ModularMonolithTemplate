@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Outbox\ModularMonolithTemplate.Outbox.Infrastructure\ModularMonolithTemplate.Outbox.Infrastructure.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Sales.Application\ModularMonolithTemplate.Sales.Application.csproj" />
     <ProjectReference Include="..\ModularMonolithTemplate.Sales.Domain\ModularMonolithTemplate.Sales.Domain.csproj" />
   </ItemGroup>

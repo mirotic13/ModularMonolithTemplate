@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ModularMonolithTemplate.Inventory.Domain.Entities;
 
-namespace ModularMonolithTemplate.Inventory.Infraestructure.Persistence.Configurations;
+namespace ModularMonolithTemplate.Inventory.Infrastructure.Persistence.Configurations;
 
 public class StockItemConfiguration : IEntityTypeConfiguration<StockItem>
 {

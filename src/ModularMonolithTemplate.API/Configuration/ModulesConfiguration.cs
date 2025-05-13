@@ -1,6 +1,6 @@
 ﻿using ModularMonolithTemplate.Auth.Infraestructure.DependencyInjection;
-using ModularMonolithTemplate.Inventory.Infraestructure.DependencyInjection;
-using ModularMonolithTemplate.Sales.Infraestructure.DependencyInjection;
+using ModularMonolithTemplate.Inventory.Infrastructure.DependencyInjection;
+using ModularMonolithTemplate.Sales.Infrastructure.DependencyInjection;
 
 namespace ModularMonolithTemplate.API.Configuration;
 
